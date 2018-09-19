@@ -1,8 +1,22 @@
-var ConvertLib = artifacts.require("./ConvertLib.sol");
-var MetaCoin = artifacts.require("./MetaCoin.sol");
+var PlazaToken = artifacts.require("./PlazaToken.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(ConvertLib);
-  deployer.link(ConvertLib, MetaCoin);
-  deployer.deploy(MetaCoin);
+  const utils = require("../test/utils");
+  const tokenDecimals = 18;
+  
+  const token = {
+    "ticker": "PLAZA",
+    "name": "Plaza Token",
+    "decimals": tokenDecimals,
+    "cap": utils.toFixed(960000000 * 10**tokenDecimals)
+  };
+
+  const tokenParams = [
+    token.name,
+      token.ticker,
+      parseInt(token.decimals, 10),
+      parseInt(token.cap, 10)
+  ];
+ 
+  deployer.deploy(PlazaToken, ...tokenParams);
 };
