@@ -30,11 +30,13 @@ module.exports = {
     kovan: { 
       provider: kovanProvider, 
       network_id: "42", 
+      gasPrice: 10e9, // 10 gwei
       gas: 4465030 
     },
     live: { 
       provider: mainNetProvider, 
       network_id: "1", 
+      gasPrice: 8e9, // 8 gwei
       gas: 7500000 
     }
   }
