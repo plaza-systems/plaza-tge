@@ -41,7 +41,7 @@ module.exports = (deployer) => {
     parseInt(token.cap, 10)
   ];
 
-  const startTime = 1538314200;
+  const startTime = 1538316000;
   const oneDay = 86400;
   const oneHour = 3600;
  
@@ -61,7 +61,7 @@ module.exports = (deployer) => {
     .then(() => deployer.deploy(
       PlazaCrowdsale, 
       crowdsale.openingTime, 
-      crowdsale.closingTimetruffle, 
+      crowdsale.closingTime, 
       crowdsale.rate, 
       crowdsale.wallet, 
       crowdsale.cap, 
