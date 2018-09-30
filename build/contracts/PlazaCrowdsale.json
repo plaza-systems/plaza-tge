@@ -83,25 +83,6 @@
     },
     {
       "constant": true,
-      "inputs": [
-        {
-          "name": "beneficiary",
-          "type": "address"
-        }
-      ],
-      "name": "isWhitelisted",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
       "inputs": [],
       "name": "weiRaised",
       "outputs": [
@@ -340,23 +321,11 @@
           "type": "uint256"
         },
         {
-          "name": "rateTier3",
-          "type": "uint256"
-        },
-        {
           "name": "openingTimeTier3",
           "type": "uint256"
         },
         {
-          "name": "rateTier2",
-          "type": "uint256"
-        },
-        {
           "name": "openingTimeTier2",
-          "type": "uint256"
-        },
-        {
-          "name": "rateTier1",
           "type": "uint256"
         }
       ],
@@ -425,26 +394,45 @@
       ],
       "name": "TokensPurchased",
       "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "beneficiary",
+          "type": "address"
+        }
+      ],
+      "name": "isWhitelisted",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
-  "bytecode": "0x",
-  "deployedBytecode": "0x",
-  "sourceMap": "",
-  "deployedSourceMap": "",
-  "source": "pragma solidity ^0.4.24;\n\nimport \"./CappedWhitelistedCrowdsale.sol\";\nimport \"./TieredPriceCrowdsale.sol\";\nimport \"openzeppelin-solidity/contracts/crowdsale/distribution/FinalizableCrowdsale.sol\";\nimport \"openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol\";\n\ncontract PlazaCrowdsale is CappedWhitelistedCrowdsale, FinalizableCrowdsale, MintedCrowdsale, TieredPriceCrowdsale {\n\n    constructor(\n        uint256 openingTime,\n        uint256 closingTime,\n        uint256 rate,\n        address wallet,\n        uint256 cap,\n        ERC20Mintable token,\n        uint256 openingTimeTier4,\n        uint256 rateTier3, \n        uint256 openingTimeTier3, \n        uint256 rateTier2, \n        uint256 openingTimeTier2, \n        uint256 rateTier1\n    )\n    public\n    Crowdsale(rate, wallet, token)\n    CappedWhitelistedCrowdsale(cap)\n    TimedCrowdsale(openingTime, closingTime)\n    TieredPriceCrowdsale(rate, openingTimeTier4, rateTier3, openingTimeTier3, rateTier2, openingTimeTier2, rateTier1)\n    {}\n}",
+  "bytecode": "0x60806040526000600a60006101000a81548160ff0219169083151502179055503480156200002c57600080fd5b506040516101208062001362833981018060405281019080805190602001909291908051906020019092919080519060200190929190805190602001909291908051906020019092919080519060200190929190805190602001909291908051906020019092919080519060200190929190505050868183858c8c8a8d8d8c600083111515620000bb57600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614151515620000f857600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156200013557600080fd5b8260028190555081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050600081111515620001d057600080fd5b8060048190555050620001fc3360056200029a6401000000000262000cec179091906401000000009004565b4282101515156200020c57600080fd5b8181101515156200021c57600080fd5b816008819055508060098190555050506000841115156200023c57600080fd5b42831115156200024b57600080fd5b8282101515156200025b57600080fd5b8181101515156200026b57600080fd5b83600b8190555080600e8190555081600d8190555082600c819055505050505050505050505050505062000335565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151515620002d757600080fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b61101d80620003456000396000f30060806040526004361061011d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631515bc2b1461012857806321eff7fc146101575780632c4e722e146101ae578063355274ea146101d957806339564561146102045780633af32abf1461025f5780634042b66f146102ba57806347535d7b146102e55780634b6753bc146103145780634bb278f31461033f5780634f93594514610356578063521eb273146103855780635af123f4146103dc5780635d5576f81461040757806380ad2cf31461041e5780638dfbcf361461046b578063b3aefb75146104ae578063b3f05b9714610505578063b7a8807c14610534578063ec8ac4d81461055f578063fc0c546a14610595575b610126336105ec565b005b34801561013457600080fd5b5061013d6106ba565b604051808215151515815260200191505060405180910390f35b34801561016357600080fd5b50610198600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106c6565b6040518082815260200191505060405180910390f35b3480156101ba57600080fd5b506101c361070f565b6040518082815260200191505060405180910390f35b3480156101e557600080fd5b506101ee610719565b6040518082815260200191505060405180910390f35b34801561021057600080fd5b50610245600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610723565b604051808215151515815260200191505060405180910390f35b34801561026b57600080fd5b506102a0600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610740565b604051808215151515815260200191505060405180910390f35b3480156102c657600080fd5b506102cf610755565b6040518082815260200191505060405180910390f35b3480156102f157600080fd5b506102fa61075f565b604051808215151515815260200191505060405180910390f35b34801561032057600080fd5b5061032961077a565b6040518082815260200191505060405180910390f35b34801561034b57600080fd5b50610354610784565b005b34801561036257600080fd5b5061036b610804565b604051808215151515815260200191505060405180910390f35b34801561039157600080fd5b5061039a610818565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156103e857600080fd5b506103f1610842565b6040518082815260200191505060405180910390f35b34801561041357600080fd5b5061041c610851565b005b34801561042a57600080fd5b50610469600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610867565b005b34801561047757600080fd5b506104ac600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506108c3565b005b3480156104ba57600080fd5b506104ef600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610931565b6040518082815260200191505060405180910390f35b34801561051157600080fd5b5061051a61097a565b604051808215151515815260200191505060405180910390f35b34801561054057600080fd5b50610549610991565b6040518082815260200191505060405180910390f35b610593600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105ec565b005b3480156105a157600080fd5b506105aa61099b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000803491506105fc83836109c4565b610605826109e5565b905061061c82600354610a0890919063ffffffff16565b60038190555061062c8382610a29565b8273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b8484604051808381526020018281526020019250505060405180910390a36106a38383610a37565b6106ab610ada565b6106b58383610b45565b505050565b60006009544211905090565b6000600660008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6000600254905090565b6000600454905090565b6000610739826005610b4990919063ffffffff16565b9050919050565b60008061074c83610931565b14159050919050565b6000600354905090565b6000600854421015801561077557506009544211155b905090565b6000600954905090565b600a60009054906101000a900460ff161515156107a057600080fd5b6107a86106ba565b15156107b357600080fd5b6107bb610bdd565b7f9270cc390c096600a1c17c44345a1ba689fafd99d97487b10cfccf86cf73183660405160405180910390a16001600a60006101000a81548160ff021916908315150217905550565b6000600454610811610755565b1015905090565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b600061084c610bdf565b905090565b610865336005610c5290919063ffffffff16565b565b61087033610723565b151561087b57600080fd5b80600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055505050565b6108cc33610723565b15156108d757600080fd5b6108eb816005610cec90919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fa7555c95b69d4f5cc847881feb4ab2883a1921319e34fa2043747b793d65b36e60405160405180910390a250565b6000600760008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6000600a60009054906101000a900460ff16905090565b6000600854905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6109cc61075f565b15156109d757600080fd5b6109e18282610d86565b5050565b6000610a016109f2610bdf565b83610e3390919063ffffffff16565b9050919050565b6000808284019050838110151515610a1f57600080fd5b8091505092915050565b610a338282610e71565b5050565b610a418282610f65565b610a9381600660008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610a0890919063ffffffff16565b600660008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055505050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f19350505050158015610b42573d6000803e3d6000fd5b50565b5050565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614151515610b8657600080fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b565b600042600c541115610c045760056006600b5402811515610bfc57fe5b049050610c4f565b42600d541115610c2657600a600b805402811515610c1e57fe5b049050610c4f565b42600e541115610c495760146015600b5402811515610c4157fe5b049050610c4f565b600b5490505b90565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151515610c8e57600080fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151515610d2857600080fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b610d908282610f69565b600760008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610e2282600660008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610a0890919063ffffffff16565b11151515610e2f57600080fd5b5050565b6000806000841415610e485760009150610e6a565b8284029050828482811515610e5957fe5b04141515610e6657600080fd5b8091505b5092915050565b610e7961099b565b73ffffffffffffffffffffffffffffffffffffffff166340c10f1983836040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b158015610f1b57600080fd5b505af1158015610f2f573d6000803e3d6000fd5b505050506040513d6020811015610f4557600080fd5b81019080805190602001909291905050501515610f6157600080fd5b5050565b5050565b610f738282610fa1565b600454610f9082610f82610755565b610a0890919063ffffffff16565b11151515610f9d57600080fd5b5050565b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614151515610fdd57600080fd5b60008114151515610fed57600080fd5b50505600a165627a7a72305820eafb3f44273fc9c201b63fd2aedbf95e974df088c81df5809f33bc5bc216fb110029",
+  "deployedBytecode": "0x60806040526004361061011d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631515bc2b1461012857806321eff7fc146101575780632c4e722e146101ae578063355274ea146101d957806339564561146102045780633af32abf1461025f5780634042b66f146102ba57806347535d7b146102e55780634b6753bc146103145780634bb278f31461033f5780634f93594514610356578063521eb273146103855780635af123f4146103dc5780635d5576f81461040757806380ad2cf31461041e5780638dfbcf361461046b578063b3aefb75146104ae578063b3f05b9714610505578063b7a8807c14610534578063ec8ac4d81461055f578063fc0c546a14610595575b610126336105ec565b005b34801561013457600080fd5b5061013d6106ba565b604051808215151515815260200191505060405180910390f35b34801561016357600080fd5b50610198600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106c6565b6040518082815260200191505060405180910390f35b3480156101ba57600080fd5b506101c361070f565b6040518082815260200191505060405180910390f35b3480156101e557600080fd5b506101ee610719565b6040518082815260200191505060405180910390f35b34801561021057600080fd5b50610245600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610723565b604051808215151515815260200191505060405180910390f35b34801561026b57600080fd5b506102a0600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610740565b604051808215151515815260200191505060405180910390f35b3480156102c657600080fd5b506102cf610755565b6040518082815260200191505060405180910390f35b3480156102f157600080fd5b506102fa61075f565b604051808215151515815260200191505060405180910390f35b34801561032057600080fd5b5061032961077a565b6040518082815260200191505060405180910390f35b34801561034b57600080fd5b50610354610784565b005b34801561036257600080fd5b5061036b610804565b604051808215151515815260200191505060405180910390f35b34801561039157600080fd5b5061039a610818565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156103e857600080fd5b506103f1610842565b6040518082815260200191505060405180910390f35b34801561041357600080fd5b5061041c610851565b005b34801561042a57600080fd5b50610469600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610867565b005b34801561047757600080fd5b506104ac600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506108c3565b005b3480156104ba57600080fd5b506104ef600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610931565b6040518082815260200191505060405180910390f35b34801561051157600080fd5b5061051a61097a565b604051808215151515815260200191505060405180910390f35b34801561054057600080fd5b50610549610991565b6040518082815260200191505060405180910390f35b610593600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105ec565b005b3480156105a157600080fd5b506105aa61099b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000803491506105fc83836109c4565b610605826109e5565b905061061c82600354610a0890919063ffffffff16565b60038190555061062c8382610a29565b8273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b8484604051808381526020018281526020019250505060405180910390a36106a38383610a37565b6106ab610ada565b6106b58383610b45565b505050565b60006009544211905090565b6000600660008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6000600254905090565b6000600454905090565b6000610739826005610b4990919063ffffffff16565b9050919050565b60008061074c83610931565b14159050919050565b6000600354905090565b6000600854421015801561077557506009544211155b905090565b6000600954905090565b600a60009054906101000a900460ff161515156107a057600080fd5b6107a86106ba565b15156107b357600080fd5b6107bb610bdd565b7f9270cc390c096600a1c17c44345a1ba689fafd99d97487b10cfccf86cf73183660405160405180910390a16001600a60006101000a81548160ff021916908315150217905550565b6000600454610811610755565b1015905090565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b600061084c610bdf565b905090565b610865336005610c5290919063ffffffff16565b565b61087033610723565b151561087b57600080fd5b80600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055505050565b6108cc33610723565b15156108d757600080fd5b6108eb816005610cec90919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fa7555c95b69d4f5cc847881feb4ab2883a1921319e34fa2043747b793d65b36e60405160405180910390a250565b6000600760008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6000600a60009054906101000a900460ff16905090565b6000600854905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6109cc61075f565b15156109d757600080fd5b6109e18282610d86565b5050565b6000610a016109f2610bdf565b83610e3390919063ffffffff16565b9050919050565b6000808284019050838110151515610a1f57600080fd5b8091505092915050565b610a338282610e71565b5050565b610a418282610f65565b610a9381600660008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610a0890919063ffffffff16565b600660008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055505050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f19350505050158015610b42573d6000803e3d6000fd5b50565b5050565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614151515610b8657600080fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b565b600042600c541115610c045760056006600b5402811515610bfc57fe5b049050610c4f565b42600d541115610c2657600a600b805402811515610c1e57fe5b049050610c4f565b42600e541115610c495760146015600b5402811515610c4157fe5b049050610c4f565b600b5490505b90565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151515610c8e57600080fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151515610d2857600080fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b610d908282610f69565b600760008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610e2282600660008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610a0890919063ffffffff16565b11151515610e2f57600080fd5b5050565b6000806000841415610e485760009150610e6a565b8284029050828482811515610e5957fe5b04141515610e6657600080fd5b8091505b5092915050565b610e7961099b565b73ffffffffffffffffffffffffffffffffffffffff166340c10f1983836040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b158015610f1b57600080fd5b505af1158015610f2f573d6000803e3d6000fd5b505050506040513d6020811015610f4557600080fd5b81019080805190602001909291905050501515610f6157600080fd5b5050565b5050565b610f738282610fa1565b600454610f9082610f82610755565b610a0890919063ffffffff16565b11151515610f9d57600080fd5b5050565b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614151515610fdd57600080fd5b60008114151515610fed57600080fd5b50505600a165627a7a72305820eafb3f44273fc9c201b63fd2aedbf95e974df088c81df5809f33bc5bc216fb110029",
+  "sourceMap": "413:962:1:-;;;368:5:9;342:31;;;;;;;;;;;;;;;;;;;;552:517:1;8:9:-1;5:2;;;30:1;27;20:12;5:2;552:517:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1003:4;1009:16;1027;1045;952:11;965;894:3;853:4;859:6;867:5;2263:1:8;2256:4;:8;2248:17;;;;;;;;2297:1;2279:20;;:6;:20;;;;2271:29;;;;;;;;2331:1;2314:19;;:5;:19;;;;2306:28;;;;;;;;2349:4;2341:5;:12;;;;2369:6;2359:7;;:16;;;;;;;;;;;;;;;;;;2390:5;2381:6;;:14;;;;;;;;;;;;;;;;;;2179:221;;;471:1:11;465:3;:7;457:16;;;;;;;;486:3;479:4;:10;;;;419:75;259:23:5;271:10;259:7;:11;;;;;;:23;;;;;:::i;:::-;771:15:13;756:11;:30;;748:39;;;;;;;;816:11;801;:26;;793:35;;;;;;;;850:11;835:12;:26;;;;882:11;867:12;:26;;;;623:275;;746:1:3;735:8;:12;727:21;;;;;;;;785:15;766:16;:34;758:43;;;;;;;;839:16;819;:36;;811:45;;;;;;;;894:16;874;:36;;866:45;;;;;;;;934:8;922:9;:20;;;;966:16;952:11;:30;;;;1006:16;992:11;:30;;;;1046:16;1032:11;:30;;;;560:509;;;;552:517:1;;;;;;;;;413:962;;245:132:4;336:1;317:21;;:7;:21;;;;309:30;;;;;;;;368:4;345;:11;;:20;357:7;345:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;245:132;;:::o;413:962:1:-;;;;;;;",
+  "deployedSourceMap": "413:962:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2630:21:8;2640:10;2630:9;:21::i;:::-;413:962:1;1594:154:13;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1594:154:13;;;;;;;;;;;;;;;;;;;;;;;;;;;1165:127:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1165:127:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2993:68:8;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2993:68:8;;;;;;;;;;;;;;;;;;;;;;;549:66:11;;8:9:-1;5:2;;;30:1;27;20:12;5:2;549:66:11;;;;;;;;;;;;;;;;;;;;;;;364:100:5;;8:9:-1;5:2;;;30:1;27;20:12;5:2;364:100:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1254:119:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1254:119:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3115:79:8;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3115:79:8;;;;;;;;;;;;;;;;;;;;;;;1253:187:13;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1253:187:13;;;;;;;;;;;;;;;;;;;;;;;;;;;1094:82;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1094:82:13;;;;;;;;;;;;;;;;;;;;;;;711:161:9;;8:9:-1;5:2;;;30:1;27;20:12;5:2;711:161:9;;;;;;723:86:11;;8:9:-1;5:2;;;30:1;27;20:12;5:2;723:86:11;;;;;;;;;;;;;;;;;;;;;;;;;;;2844:72:8;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2844:72:8;;;;;;;;;;;;;;;;;;;;;;;;;;;1604:89:3;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1604:89:3;;;;;;;;;;;;;;;;;;;;;;;588:70:5;;8:9:-1;5:2;;;30:1;27;20:12;5:2;588:70:5;;;;;;594:105:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;594:105:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;468:116:5;;8:9:-1;5:2;;;30:1;27;20:12;5:2;468:116:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;879:103:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;879:103:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;487:76:9;;8:9:-1;5:2;;;30:1;27;20:12;5:2;487:76:9;;;;;;;;;;;;;;;;;;;;;;;;;;;955:82:13;;8:9:-1;5:2;;;30:1;27;20:12;5:2;955:82:13;;;;;;;;;;;;;;;;;;;;;;;3329:575:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;2707:69;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2707:69:8;;;;;;;;;;;;;;;;;;;;;;;;;;;3329:575;3391:17;3521:14;3411:9;3391:29;;3426:44;3447:11;3460:9;3426:20;:44::i;:::-;3538:26;3554:9;3538:15;:26::i;:::-;3521:43;;3604:25;3619:9;3604:10;;:14;;:25;;;;:::i;:::-;3591:10;:38;;;;3636:37;3653:11;3666:6;3636:16;:37::i;:::-;3725:11;3684:89;;3707:10;3684:89;;;3744:9;3761:6;3684:89;;;;;;;;;;;;;;;;;;;;;;;;3780:46;3803:11;3816:9;3780:22;:46::i;:::-;3833:15;:13;:15::i;:::-;3854:45;3876:11;3889:9;3854:21;:45::i;:::-;3329:575;;;:::o;1594:154:13:-;1636:4;1731:12;;1713:15;:30;1706:37;;1594:154;:::o;1165:127:12:-;1236:7;1260:14;:27;1275:11;1260:27;;;;;;;;;;;;;;;;1253:34;;1165:127;;;:::o;2993:68:8:-;3029:7;3051:5;;3044:12;;2993:68;:::o;549:66:11:-;584:7;606:4;;599:11;;549:66;:::o;364:100:5:-;420:4;439:20;451:7;439;:11;;:20;;;;:::i;:::-;432:27;;364:100;;;:::o;1254:119:1:-;1319:4;1365:1;1342:19;1349:11;1342:6;:19::i;:::-;:24;;1335:31;;1254:119;;;:::o;3115:79:8:-;3157:7;3179:10;;3172:17;;3115:79;:::o;1253:187:13:-;1292:4;1388:12;;1369:15;:31;;:66;;;;;1423:12;;1404:15;:31;;1369:66;1362:73;;1253:187;:::o;1094:82::-;1137:7;1159:12;;1152:19;;1094:82;:::o;711:161:9:-;753:10;;;;;;;;;;;752:11;744:20;;;;;;;;778:11;:9;:11::i;:::-;770:20;;;;;;;;797:15;:13;:15::i;:::-;823:20;;;;;;;;;;863:4;850:10;;:17;;;;;;;;;;;;;;;;;;711:161::o;723:86:11:-;766:4;800;;785:11;:9;:11::i;:::-;:19;;778:26;;723:86;:::o;2844:72:8:-;2882:7;2904;;;;;;;;;;;2897:14;;2844:72;:::o;1604:89:3:-;1645:7;1671:15;:13;:15::i;:::-;1664:22;;1604:89;:::o;588:70:5:-;627:26;642:10;627:7;:14;;:26;;;;:::i;:::-;588:70::o;594:105:12:-;327:20:5;336:10;327:8;:20::i;:::-;319:29;;;;;;;;691:3:12;670:5;:18;676:11;670:18;;;;;;;;;;;;;;;:24;;;;594:105;;:::o;468:116:5:-;327:20;336:10;327:8;:20::i;:::-;319:29;;;;;;;;528:20;540:7;528;:11;;:20;;;;:::i;:::-;571:7;559:20;;;;;;;;;;;;468:116;:::o;879:103:12:-;937:7;959:5;:18;965:11;959:18;;;;;;;;;;;;;;;;952:25;;879:103;;;:::o;487:76:9:-;529:4;548:10;;;;;;;;;;;541:17;;487:76;:::o;955:82:13:-;998:7;1020:12;;1013:19;;955:82;:::o;2707:69:8:-;2744:6;2765;;;;;;;;;;;2758:13;;2707:69;:::o;1928:176:13:-;426:8;:6;:8::i;:::-;418:17;;;;;;;;2049:50;2076:11;2089:9;2049:26;:50::i;:::-;1928:176;;:::o;1946:154:3:-;2033:7;2063:30;2077:15;:13;:15::i;:::-;2063:9;:13;;:30;;;;:::i;:::-;2056:37;;1946:154;;;:::o;1273:131:15:-;1331:7;1346:9;1362:1;1358;:5;1346:17;;1382:1;1377;:6;;1369:15;;;;;;;;1398:1;1391:8;;1273:131;;;;;:::o;5779:146:8:-;5880:40;5895:11;5908;5880:14;:40::i;:::-;5779:146;;:::o;1907:247:12:-;2012:52;2041:11;2054:9;2012:28;:52::i;:::-;2100:49;2139:9;2100:14;:27;2115:11;2100:27;;;;;;;;;;;;;;;;:31;;:49;;;;:::i;:::-;2070:14;:27;2085:11;2070:27;;;;;;;;;;;;;;;:79;;;;1907:247;;:::o;6741:72:8:-;6781:7;;;;;;;;;;;:16;;:27;6798:9;6781:27;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;6781:27:8;6741:72::o;4996:128::-;;;:::o;657:166:4:-;741:4;782:1;763:21;;:7;:21;;;;755:30;;;;;;;;798:4;:11;;:20;810:7;798:20;;;;;;;;;;;;;;;;;;;;;;;;;791:27;;657:166;;;;:::o;1069:39:9:-;:::o;1075:465:3:-;1129:7;1214:15;1200:11;;:29;1197:337;;;1267:1;1263;1251:9;;:13;:17;;;;;;;;1244:25;;;;1197:337;1311:15;1297:11;;:29;1294:240;;;1365:2;1360;1348:9;;:14;:19;;;;;;;;1341:27;;;;1294:240;1410:15;1396:11;;:29;1393:141;;;1464:2;1459;1447:9;;:14;:19;;;;;;;;1440:27;;;;1393:141;1513:9;;1506:17;;1075:465;;:::o;443:136:4:-;537:1;518:21;;:7;:21;;;;510:30;;;;;;;;569:5;546:4;:11;;:20;558:7;546:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;443:136;;:::o;245:132::-;336:1;317:21;;:7;:21;;;;309:30;;;;;;;;368:4;345;:11;;:20;357:7;345:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;245:132;;:::o;1490:244:12:-;1593:50;1620:11;1633:9;1593:26;:50::i;:::-;1710:5;:18;1716:11;1710:18;;;;;;;;;;;;;;;;1664:42;1696:9;1664:14;:27;1679:11;1664:27;;;;;;;;;;;;;;;;:31;;:42;;;;:::i;:::-;:64;;1649:80;;;;;;;;1490:244;;:::o;205:381:15:-;263:7;524:9;492:1;487;:6;483:35;;;510:1;503:8;;;;483:35;540:1;536;:5;524:17;;564:1;559;555;:5;;;;;;;;:10;547:19;;;;;;;;580:1;573:8;;205:381;;;;;;:::o;501:251:10:-;706:7;:5;:7::i;:::-;684:36;;;721:11;734;684:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;684:62:10;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;684:62:10;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;684:62:10;;;;;;;;;;;;;;;;669:78;;;;;;;;501:251;;:::o;6176:129:8:-;;;:::o;993:207:11:-;1096:50;1123:11;1136:9;1096:26;:50::i;:::-;1190:4;;1160:26;1176:9;1160:11;:9;:11::i;:::-;:15;;:26;;;;:::i;:::-;:34;;1152:43;;;;;;;;993:207;;:::o;4549:171:8:-;4683:1;4660:25;;:11;:25;;;;4652:34;;;;;;;;4713:1;4700:9;:14;;4692:23;;;;;;;;4549:171;;:::o",
+  "source": "pragma solidity ^0.4.24;\n\nimport \"./TieredPriceCrowdsale.sol\";\nimport \"openzeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol\";\nimport \"openzeppelin-solidity/contracts/crowdsale/validation/IndividuallyCappedCrowdsale.sol\";\nimport \"openzeppelin-solidity/contracts/crowdsale/distribution/FinalizableCrowdsale.sol\";\nimport \"openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol\";\n\ncontract PlazaCrowdsale is CappedCrowdsale, IndividuallyCappedCrowdsale, FinalizableCrowdsale, MintedCrowdsale, TieredPriceCrowdsale {\n    constructor(\n        uint256 openingTime,\n        uint256 closingTime,\n        uint256 rate,\n        address wallet,\n        uint256 cap,\n        ERC20Mintable token,\n        uint256 openingTimeTier4, \n        uint256 openingTimeTier3, \n        uint256 openingTimeTier2\n    )\n    public\n    Crowdsale(rate, wallet, token)\n    CappedCrowdsale(cap)\n    IndividuallyCappedCrowdsale()\n    TimedCrowdsale(openingTime, closingTime)\n    TieredPriceCrowdsale(rate, openingTimeTier2, openingTimeTier3, openingTimeTier4)\n    {}\n\n    /**\n    * @dev Checks whether the beneficiary is in the whitelist.\n    * @param beneficiary Address to be checked\n    * @return Whether the beneficiary is whitelisted\n    */\n\n    function isWhitelisted(address beneficiary) public view returns (bool) {\n        return getCap(beneficiary) != 0;\n    }\n}",
   "sourcePath": "/Users/kevinjohnson/Documents/GitHub/plaza-tge/contracts/PlazaCrowdsale.sol",
   "ast": {
     "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-tge/contracts/PlazaCrowdsale.sol",
     "exportedSymbols": {
       "PlazaCrowdsale": [
-        151
+        130
       ]
     },
-    "id": 152,
+    "id": 131,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 89,
+        "id": 58,
         "literals": [
           "solidity",
           "^",
@@ -455,46 +443,57 @@
         "src": "0:24:1"
       },
       {
-        "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-tge/contracts/CappedWhitelistedCrowdsale.sol",
-        "file": "./CappedWhitelistedCrowdsale.sol",
-        "id": 90,
+        "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-tge/contracts/TieredPriceCrowdsale.sol",
+        "file": "./TieredPriceCrowdsale.sol",
+        "id": 59,
         "nodeType": "ImportDirective",
-        "scope": 152,
-        "sourceUnit": 88,
-        "src": "26:42:1",
+        "scope": 131,
+        "sourceUnit": 322,
+        "src": "26:36:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-tge/contracts/TieredPriceCrowdsale.sol",
-        "file": "./TieredPriceCrowdsale.sol",
-        "id": 91,
+        "absolutePath": "openzeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol",
+        "file": "openzeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol",
+        "id": 60,
         "nodeType": "ImportDirective",
-        "scope": 152,
-        "sourceUnit": 324,
-        "src": "69:36:1",
+        "scope": 131,
+        "sourceUnit": 1103,
+        "src": "63:82:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/crowdsale/validation/IndividuallyCappedCrowdsale.sol",
+        "file": "openzeppelin-solidity/contracts/crowdsale/validation/IndividuallyCappedCrowdsale.sol",
+        "id": 61,
+        "nodeType": "ImportDirective",
+        "scope": 131,
+        "sourceUnit": 1218,
+        "src": "146:94:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "openzeppelin-solidity/contracts/crowdsale/distribution/FinalizableCrowdsale.sol",
         "file": "openzeppelin-solidity/contracts/crowdsale/distribution/FinalizableCrowdsale.sol",
-        "id": 92,
+        "id": 62,
         "nodeType": "ImportDirective",
-        "scope": 152,
-        "sourceUnit": 908,
-        "src": "106:89:1",
+        "scope": 131,
+        "sourceUnit": 1003,
+        "src": "241:89:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
         "file": "openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
-        "id": 93,
+        "id": 63,
         "nodeType": "ImportDirective",
-        "scope": 152,
-        "sourceUnit": 936,
-        "src": "196:80:1",
+        "scope": 131,
+        "sourceUnit": 1031,
+        "src": "331:80:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -504,114 +503,130 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 94,
-              "name": "CappedWhitelistedCrowdsale",
+              "id": 64,
+              "name": "CappedCrowdsale",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 87,
-              "src": "305:26:1",
+              "referencedDeclaration": 1102,
+              "src": "440:15:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CappedWhitelistedCrowdsale_$87",
-                "typeString": "contract CappedWhitelistedCrowdsale"
+                "typeIdentifier": "t_contract$_CappedCrowdsale_$1102",
+                "typeString": "contract CappedCrowdsale"
               }
             },
-            "id": 95,
+            "id": 65,
             "nodeType": "InheritanceSpecifier",
-            "src": "305:26:1"
+            "src": "440:15:1"
           },
           {
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 96,
+              "id": 66,
+              "name": "IndividuallyCappedCrowdsale",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1217,
+              "src": "457:27:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IndividuallyCappedCrowdsale_$1217",
+                "typeString": "contract IndividuallyCappedCrowdsale"
+              }
+            },
+            "id": 67,
+            "nodeType": "InheritanceSpecifier",
+            "src": "457:27:1"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 68,
               "name": "FinalizableCrowdsale",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 907,
-              "src": "333:20:1",
+              "referencedDeclaration": 1002,
+              "src": "486:20:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_FinalizableCrowdsale_$907",
+                "typeIdentifier": "t_contract$_FinalizableCrowdsale_$1002",
                 "typeString": "contract FinalizableCrowdsale"
               }
             },
-            "id": 97,
+            "id": 69,
             "nodeType": "InheritanceSpecifier",
-            "src": "333:20:1"
+            "src": "486:20:1"
           },
           {
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 98,
+              "id": 70,
               "name": "MintedCrowdsale",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 935,
-              "src": "355:15:1",
+              "referencedDeclaration": 1030,
+              "src": "508:15:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_MintedCrowdsale_$935",
+                "typeIdentifier": "t_contract$_MintedCrowdsale_$1030",
                 "typeString": "contract MintedCrowdsale"
               }
             },
-            "id": 99,
+            "id": 71,
             "nodeType": "InheritanceSpecifier",
-            "src": "355:15:1"
+            "src": "508:15:1"
           },
           {
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 100,
+              "id": 72,
               "name": "TieredPriceCrowdsale",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 323,
-              "src": "372:20:1",
+              "referencedDeclaration": 321,
+              "src": "525:20:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_TieredPriceCrowdsale_$323",
+                "typeIdentifier": "t_contract$_TieredPriceCrowdsale_$321",
                 "typeString": "contract TieredPriceCrowdsale"
               }
             },
-            "id": 101,
+            "id": 73,
             "nodeType": "InheritanceSpecifier",
-            "src": "372:20:1"
+            "src": "525:20:1"
           }
         ],
         "contractDependencies": [
-          87,
-          323,
-          499,
-          856,
-          907,
-          935,
-          1007,
-          1122,
-          1234
+          321,
+          497,
+          951,
+          1002,
+          1030,
+          1102,
+          1217,
+          1329
         ],
         "contractKind": "contract",
         "documentation": null,
-        "fullyImplemented": false,
-        "id": 151,
+        "fullyImplemented": true,
+        "id": 130,
         "linearizedBaseContracts": [
-          151,
-          323,
-          935,
-          907,
-          1234,
-          87,
-          1122,
-          499,
-          1007,
-          856
+          130,
+          321,
+          1030,
+          1002,
+          1329,
+          1217,
+          497,
+          1102,
+          951
         ],
         "name": "PlazaCrowdsale",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 149,
+              "id": 114,
               "nodeType": "Block",
-              "src": "1008:2:1",
+              "src": "1067:2:1",
               "statements": []
             },
             "documentation": null,
-            "id": 150,
+            "id": 115,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -620,12 +635,12 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 128,
+                    "id": 94,
                     "name": "rate",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 107,
-                    "src": "784:4:1",
+                    "referencedDeclaration": 79,
+                    "src": "853:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -633,12 +648,12 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 129,
+                    "id": 95,
                     "name": "wallet",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 109,
-                    "src": "790:6:1",
+                    "referencedDeclaration": 81,
+                    "src": "859:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -646,78 +661,97 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 130,
+                    "id": 96,
                     "name": "token",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 113,
-                    "src": "798:5:1",
+                    "referencedDeclaration": 85,
+                    "src": "867:5:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC20Mintable_$1902",
+                      "typeIdentifier": "t_contract$_ERC20Mintable_$2227",
                       "typeString": "contract ERC20Mintable"
                     }
                   }
                 ],
-                "id": 131,
+                "id": 97,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 127,
+                  "id": 93,
                   "name": "Crowdsale",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 856,
-                  "src": "774:9:1",
+                  "referencedDeclaration": 951,
+                  "src": "843:9:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Crowdsale_$856_$",
+                    "typeIdentifier": "t_type$_t_contract$_Crowdsale_$951_$",
                     "typeString": "type(contract Crowdsale)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "774:30:1"
+                "src": "843:30:1"
               },
               {
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 133,
+                    "id": 99,
                     "name": "cap",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 111,
-                    "src": "836:3:1",
+                    "referencedDeclaration": 83,
+                    "src": "894:3:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   }
                 ],
-                "id": 134,
+                "id": 100,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 132,
-                  "name": "CappedWhitelistedCrowdsale",
+                  "id": 98,
+                  "name": "CappedCrowdsale",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 87,
-                  "src": "809:26:1",
+                  "referencedDeclaration": 1102,
+                  "src": "878:15:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_CappedWhitelistedCrowdsale_$87_$",
-                    "typeString": "type(contract CappedWhitelistedCrowdsale)"
+                    "typeIdentifier": "t_type$_t_contract$_CappedCrowdsale_$1102_$",
+                    "typeString": "type(contract CappedCrowdsale)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "809:31:1"
+                "src": "878:20:1"
+              },
+              {
+                "arguments": [],
+                "id": 102,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 101,
+                  "name": "IndividuallyCappedCrowdsale",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1217,
+                  "src": "903:27:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_IndividuallyCappedCrowdsale_$1217_$",
+                    "typeString": "type(contract IndividuallyCappedCrowdsale)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "903:29:1"
               },
               {
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 136,
+                    "id": 104,
                     "name": "openingTime",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 103,
-                    "src": "860:11:1",
+                    "referencedDeclaration": 75,
+                    "src": "952:11:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -725,45 +759,45 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 137,
+                    "id": 105,
                     "name": "closingTime",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 105,
-                    "src": "873:11:1",
+                    "referencedDeclaration": 77,
+                    "src": "965:11:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   }
                 ],
-                "id": 138,
+                "id": 106,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 135,
+                  "id": 103,
                   "name": "TimedCrowdsale",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1234,
-                  "src": "845:14:1",
+                  "referencedDeclaration": 1329,
+                  "src": "937:14:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_TimedCrowdsale_$1234_$",
+                    "typeIdentifier": "t_type$_t_contract$_TimedCrowdsale_$1329_$",
                     "typeString": "type(contract TimedCrowdsale)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "845:40:1"
+                "src": "937:40:1"
               },
               {
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 140,
+                    "id": 108,
                     "name": "rate",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 107,
-                    "src": "911:4:1",
+                    "referencedDeclaration": 79,
+                    "src": "1003:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -771,64 +805,12 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 141,
-                    "name": "openingTimeTier4",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 115,
-                    "src": "917:16:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  {
-                    "argumentTypes": null,
-                    "id": 142,
-                    "name": "rateTier3",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 117,
-                    "src": "935:9:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  {
-                    "argumentTypes": null,
-                    "id": 143,
-                    "name": "openingTimeTier3",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 119,
-                    "src": "946:16:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  {
-                    "argumentTypes": null,
-                    "id": 144,
-                    "name": "rateTier2",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 121,
-                    "src": "964:9:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  {
-                    "argumentTypes": null,
-                    "id": 145,
+                    "id": 109,
                     "name": "openingTimeTier2",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 123,
-                    "src": "975:16:1",
+                    "referencedDeclaration": 91,
+                    "src": "1009:16:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -836,49 +818,62 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 146,
-                    "name": "rateTier1",
+                    "id": 110,
+                    "name": "openingTimeTier3",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 125,
-                    "src": "993:9:1",
+                    "referencedDeclaration": 89,
+                    "src": "1027:16:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 111,
+                    "name": "openingTimeTier4",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 87,
+                    "src": "1045:16:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   }
                 ],
-                "id": 147,
+                "id": 112,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 139,
+                  "id": 107,
                   "name": "TieredPriceCrowdsale",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 323,
-                  "src": "890:20:1",
+                  "referencedDeclaration": 321,
+                  "src": "982:20:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_TieredPriceCrowdsale_$323_$",
+                    "typeIdentifier": "t_type$_t_contract$_TieredPriceCrowdsale_$321_$",
                     "typeString": "type(contract TieredPriceCrowdsale)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "890:113:1"
+                "src": "982:80:1"
               }
             ],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 126,
+              "id": 92,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 103,
+                  "id": 75,
                   "name": "openingTime",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "421:19:1",
+                  "scope": 115,
+                  "src": "573:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -886,10 +881,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 102,
+                    "id": 74,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "421:7:1",
+                    "src": "573:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -900,11 +895,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 105,
+                  "id": 77,
                   "name": "closingTime",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "450:19:1",
+                  "scope": 115,
+                  "src": "602:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -912,10 +907,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 104,
+                    "id": 76,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "450:7:1",
+                    "src": "602:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -926,11 +921,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 107,
+                  "id": 79,
                   "name": "rate",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "479:12:1",
+                  "scope": 115,
+                  "src": "631:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -938,10 +933,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 106,
+                    "id": 78,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "479:7:1",
+                    "src": "631:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -952,11 +947,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 109,
+                  "id": 81,
                   "name": "wallet",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "501:14:1",
+                  "scope": 115,
+                  "src": "653:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -964,10 +959,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 108,
+                    "id": 80,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "501:7:1",
+                    "src": "653:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -978,11 +973,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 111,
+                  "id": 83,
                   "name": "cap",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "525:11:1",
+                  "scope": 115,
+                  "src": "677:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -990,10 +985,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 110,
+                    "id": 82,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "525:7:1",
+                    "src": "677:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1004,26 +999,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 113,
+                  "id": 85,
                   "name": "token",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "546:19:1",
+                  "scope": 115,
+                  "src": "698:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ERC20Mintable_$1902",
+                    "typeIdentifier": "t_contract$_ERC20Mintable_$2227",
                     "typeString": "contract ERC20Mintable"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 112,
+                    "id": 84,
                     "name": "ERC20Mintable",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 1902,
-                    "src": "546:13:1",
+                    "referencedDeclaration": 2227,
+                    "src": "698:13:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC20Mintable_$1902",
+                      "typeIdentifier": "t_contract$_ERC20Mintable_$2227",
                       "typeString": "contract ERC20Mintable"
                     }
                   },
@@ -1032,11 +1027,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 115,
+                  "id": 87,
                   "name": "openingTimeTier4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "575:24:1",
+                  "scope": 115,
+                  "src": "727:24:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1044,10 +1039,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 114,
+                    "id": 86,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "575:7:1",
+                    "src": "727:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1058,37 +1053,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 117,
-                  "name": "rateTier3",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "609:17:1",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 116,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "609:7:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 119,
+                  "id": 89,
                   "name": "openingTimeTier3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "637:24:1",
+                  "scope": 115,
+                  "src": "762:24:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1096,10 +1065,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 118,
+                    "id": 88,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "637:7:1",
+                    "src": "762:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1110,37 +1079,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 121,
-                  "name": "rateTier2",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "672:17:1",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 120,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "672:7:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 123,
+                  "id": 91,
                   "name": "openingTimeTier2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "700:24:1",
+                  "scope": 115,
+                  "src": "797:24:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1148,36 +1091,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 122,
+                    "id": 90,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "700:7:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 125,
-                  "name": "rateTier1",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "735:17:1",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 124,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "735:7:1",
+                    "src": "797:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1187,40 +1104,221 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "411:347:1"
+              "src": "563:264:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 148,
+              "id": 113,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1008:0:1"
+              "src": "1067:0:1"
             },
-            "scope": 151,
-            "src": "400:610:1",
+            "scope": 130,
+            "src": "552:517:1",
             "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 128,
+              "nodeType": "Block",
+              "src": "1325:48:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 126,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 123,
+                          "name": "beneficiary",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 117,
+                          "src": "1349:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 122,
+                        "name": "getCap",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1150,
+                        "src": "1342:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_uint256_$",
+                          "typeString": "function (address) view returns (uint256)"
+                        }
+                      },
+                      "id": 124,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1342:19:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 125,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1365:1:1",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "1342:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 121,
+                  "id": 127,
+                  "nodeType": "Return",
+                  "src": "1335:31:1"
+                }
+              ]
+            },
+            "documentation": "@dev Checks whether the beneficiary is in the whitelist.\n@param beneficiary Address to be checked\n@return Whether the beneficiary is whitelisted",
+            "id": 129,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isWhitelisted",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 118,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 117,
+                  "name": "beneficiary",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129,
+                  "src": "1277:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 116,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1277:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1276:21:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 121,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 120,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129,
+                  "src": "1319:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 119,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1319:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1318:6:1"
+            },
+            "scope": 130,
+            "src": "1254:119:1",
+            "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 152,
-        "src": "278:734:1"
+        "scope": 131,
+        "src": "413:962:1"
       }
     ],
-    "src": "0:1012:1"
+    "src": "0:1375:1"
   },
   "legacyAST": {
     "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-tge/contracts/PlazaCrowdsale.sol",
     "exportedSymbols": {
       "PlazaCrowdsale": [
-        151
+        130
       ]
     },
-    "id": 152,
+    "id": 131,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 89,
+        "id": 58,
         "literals": [
           "solidity",
           "^",
@@ -1231,46 +1329,57 @@
         "src": "0:24:1"
       },
       {
-        "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-tge/contracts/CappedWhitelistedCrowdsale.sol",
-        "file": "./CappedWhitelistedCrowdsale.sol",
-        "id": 90,
+        "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-tge/contracts/TieredPriceCrowdsale.sol",
+        "file": "./TieredPriceCrowdsale.sol",
+        "id": 59,
         "nodeType": "ImportDirective",
-        "scope": 152,
-        "sourceUnit": 88,
-        "src": "26:42:1",
+        "scope": 131,
+        "sourceUnit": 322,
+        "src": "26:36:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-tge/contracts/TieredPriceCrowdsale.sol",
-        "file": "./TieredPriceCrowdsale.sol",
-        "id": 91,
+        "absolutePath": "openzeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol",
+        "file": "openzeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol",
+        "id": 60,
         "nodeType": "ImportDirective",
-        "scope": 152,
-        "sourceUnit": 324,
-        "src": "69:36:1",
+        "scope": 131,
+        "sourceUnit": 1103,
+        "src": "63:82:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/crowdsale/validation/IndividuallyCappedCrowdsale.sol",
+        "file": "openzeppelin-solidity/contracts/crowdsale/validation/IndividuallyCappedCrowdsale.sol",
+        "id": 61,
+        "nodeType": "ImportDirective",
+        "scope": 131,
+        "sourceUnit": 1218,
+        "src": "146:94:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "openzeppelin-solidity/contracts/crowdsale/distribution/FinalizableCrowdsale.sol",
         "file": "openzeppelin-solidity/contracts/crowdsale/distribution/FinalizableCrowdsale.sol",
-        "id": 92,
+        "id": 62,
         "nodeType": "ImportDirective",
-        "scope": 152,
-        "sourceUnit": 908,
-        "src": "106:89:1",
+        "scope": 131,
+        "sourceUnit": 1003,
+        "src": "241:89:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
         "file": "openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol",
-        "id": 93,
+        "id": 63,
         "nodeType": "ImportDirective",
-        "scope": 152,
-        "sourceUnit": 936,
-        "src": "196:80:1",
+        "scope": 131,
+        "sourceUnit": 1031,
+        "src": "331:80:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -1280,114 +1389,130 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 94,
-              "name": "CappedWhitelistedCrowdsale",
+              "id": 64,
+              "name": "CappedCrowdsale",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 87,
-              "src": "305:26:1",
+              "referencedDeclaration": 1102,
+              "src": "440:15:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CappedWhitelistedCrowdsale_$87",
-                "typeString": "contract CappedWhitelistedCrowdsale"
+                "typeIdentifier": "t_contract$_CappedCrowdsale_$1102",
+                "typeString": "contract CappedCrowdsale"
               }
             },
-            "id": 95,
+            "id": 65,
             "nodeType": "InheritanceSpecifier",
-            "src": "305:26:1"
+            "src": "440:15:1"
           },
           {
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 96,
+              "id": 66,
+              "name": "IndividuallyCappedCrowdsale",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1217,
+              "src": "457:27:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IndividuallyCappedCrowdsale_$1217",
+                "typeString": "contract IndividuallyCappedCrowdsale"
+              }
+            },
+            "id": 67,
+            "nodeType": "InheritanceSpecifier",
+            "src": "457:27:1"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 68,
               "name": "FinalizableCrowdsale",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 907,
-              "src": "333:20:1",
+              "referencedDeclaration": 1002,
+              "src": "486:20:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_FinalizableCrowdsale_$907",
+                "typeIdentifier": "t_contract$_FinalizableCrowdsale_$1002",
                 "typeString": "contract FinalizableCrowdsale"
               }
             },
-            "id": 97,
+            "id": 69,
             "nodeType": "InheritanceSpecifier",
-            "src": "333:20:1"
+            "src": "486:20:1"
           },
           {
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 98,
+              "id": 70,
               "name": "MintedCrowdsale",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 935,
-              "src": "355:15:1",
+              "referencedDeclaration": 1030,
+              "src": "508:15:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_MintedCrowdsale_$935",
+                "typeIdentifier": "t_contract$_MintedCrowdsale_$1030",
                 "typeString": "contract MintedCrowdsale"
               }
             },
-            "id": 99,
+            "id": 71,
             "nodeType": "InheritanceSpecifier",
-            "src": "355:15:1"
+            "src": "508:15:1"
           },
           {
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 100,
+              "id": 72,
               "name": "TieredPriceCrowdsale",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 323,
-              "src": "372:20:1",
+              "referencedDeclaration": 321,
+              "src": "525:20:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_TieredPriceCrowdsale_$323",
+                "typeIdentifier": "t_contract$_TieredPriceCrowdsale_$321",
                 "typeString": "contract TieredPriceCrowdsale"
               }
             },
-            "id": 101,
+            "id": 73,
             "nodeType": "InheritanceSpecifier",
-            "src": "372:20:1"
+            "src": "525:20:1"
           }
         ],
         "contractDependencies": [
-          87,
-          323,
-          499,
-          856,
-          907,
-          935,
-          1007,
-          1122,
-          1234
+          321,
+          497,
+          951,
+          1002,
+          1030,
+          1102,
+          1217,
+          1329
         ],
         "contractKind": "contract",
         "documentation": null,
-        "fullyImplemented": false,
-        "id": 151,
+        "fullyImplemented": true,
+        "id": 130,
         "linearizedBaseContracts": [
-          151,
-          323,
-          935,
-          907,
-          1234,
-          87,
-          1122,
-          499,
-          1007,
-          856
+          130,
+          321,
+          1030,
+          1002,
+          1329,
+          1217,
+          497,
+          1102,
+          951
         ],
         "name": "PlazaCrowdsale",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 149,
+              "id": 114,
               "nodeType": "Block",
-              "src": "1008:2:1",
+              "src": "1067:2:1",
               "statements": []
             },
             "documentation": null,
-            "id": 150,
+            "id": 115,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -1396,12 +1521,12 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 128,
+                    "id": 94,
                     "name": "rate",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 107,
-                    "src": "784:4:1",
+                    "referencedDeclaration": 79,
+                    "src": "853:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1409,12 +1534,12 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 129,
+                    "id": 95,
                     "name": "wallet",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 109,
-                    "src": "790:6:1",
+                    "referencedDeclaration": 81,
+                    "src": "859:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1422,78 +1547,97 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 130,
+                    "id": 96,
                     "name": "token",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 113,
-                    "src": "798:5:1",
+                    "referencedDeclaration": 85,
+                    "src": "867:5:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC20Mintable_$1902",
+                      "typeIdentifier": "t_contract$_ERC20Mintable_$2227",
                       "typeString": "contract ERC20Mintable"
                     }
                   }
                 ],
-                "id": 131,
+                "id": 97,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 127,
+                  "id": 93,
                   "name": "Crowdsale",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 856,
-                  "src": "774:9:1",
+                  "referencedDeclaration": 951,
+                  "src": "843:9:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Crowdsale_$856_$",
+                    "typeIdentifier": "t_type$_t_contract$_Crowdsale_$951_$",
                     "typeString": "type(contract Crowdsale)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "774:30:1"
+                "src": "843:30:1"
               },
               {
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 133,
+                    "id": 99,
                     "name": "cap",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 111,
-                    "src": "836:3:1",
+                    "referencedDeclaration": 83,
+                    "src": "894:3:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   }
                 ],
-                "id": 134,
+                "id": 100,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 132,
-                  "name": "CappedWhitelistedCrowdsale",
+                  "id": 98,
+                  "name": "CappedCrowdsale",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 87,
-                  "src": "809:26:1",
+                  "referencedDeclaration": 1102,
+                  "src": "878:15:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_CappedWhitelistedCrowdsale_$87_$",
-                    "typeString": "type(contract CappedWhitelistedCrowdsale)"
+                    "typeIdentifier": "t_type$_t_contract$_CappedCrowdsale_$1102_$",
+                    "typeString": "type(contract CappedCrowdsale)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "809:31:1"
+                "src": "878:20:1"
+              },
+              {
+                "arguments": [],
+                "id": 102,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 101,
+                  "name": "IndividuallyCappedCrowdsale",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1217,
+                  "src": "903:27:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_IndividuallyCappedCrowdsale_$1217_$",
+                    "typeString": "type(contract IndividuallyCappedCrowdsale)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "903:29:1"
               },
               {
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 136,
+                    "id": 104,
                     "name": "openingTime",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 103,
-                    "src": "860:11:1",
+                    "referencedDeclaration": 75,
+                    "src": "952:11:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1501,45 +1645,45 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 137,
+                    "id": 105,
                     "name": "closingTime",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 105,
-                    "src": "873:11:1",
+                    "referencedDeclaration": 77,
+                    "src": "965:11:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   }
                 ],
-                "id": 138,
+                "id": 106,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 135,
+                  "id": 103,
                   "name": "TimedCrowdsale",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1234,
-                  "src": "845:14:1",
+                  "referencedDeclaration": 1329,
+                  "src": "937:14:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_TimedCrowdsale_$1234_$",
+                    "typeIdentifier": "t_type$_t_contract$_TimedCrowdsale_$1329_$",
                     "typeString": "type(contract TimedCrowdsale)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "845:40:1"
+                "src": "937:40:1"
               },
               {
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 140,
+                    "id": 108,
                     "name": "rate",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 107,
-                    "src": "911:4:1",
+                    "referencedDeclaration": 79,
+                    "src": "1003:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1547,64 +1691,12 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 141,
-                    "name": "openingTimeTier4",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 115,
-                    "src": "917:16:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  {
-                    "argumentTypes": null,
-                    "id": 142,
-                    "name": "rateTier3",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 117,
-                    "src": "935:9:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  {
-                    "argumentTypes": null,
-                    "id": 143,
-                    "name": "openingTimeTier3",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 119,
-                    "src": "946:16:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  {
-                    "argumentTypes": null,
-                    "id": 144,
-                    "name": "rateTier2",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 121,
-                    "src": "964:9:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  {
-                    "argumentTypes": null,
-                    "id": 145,
+                    "id": 109,
                     "name": "openingTimeTier2",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 123,
-                    "src": "975:16:1",
+                    "referencedDeclaration": 91,
+                    "src": "1009:16:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1612,49 +1704,62 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 146,
-                    "name": "rateTier1",
+                    "id": 110,
+                    "name": "openingTimeTier3",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 125,
-                    "src": "993:9:1",
+                    "referencedDeclaration": 89,
+                    "src": "1027:16:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 111,
+                    "name": "openingTimeTier4",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 87,
+                    "src": "1045:16:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   }
                 ],
-                "id": 147,
+                "id": 112,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 139,
+                  "id": 107,
                   "name": "TieredPriceCrowdsale",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 323,
-                  "src": "890:20:1",
+                  "referencedDeclaration": 321,
+                  "src": "982:20:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_TieredPriceCrowdsale_$323_$",
+                    "typeIdentifier": "t_type$_t_contract$_TieredPriceCrowdsale_$321_$",
                     "typeString": "type(contract TieredPriceCrowdsale)"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "890:113:1"
+                "src": "982:80:1"
               }
             ],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 126,
+              "id": 92,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 103,
+                  "id": 75,
                   "name": "openingTime",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "421:19:1",
+                  "scope": 115,
+                  "src": "573:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1662,10 +1767,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 102,
+                    "id": 74,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "421:7:1",
+                    "src": "573:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1676,11 +1781,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 105,
+                  "id": 77,
                   "name": "closingTime",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "450:19:1",
+                  "scope": 115,
+                  "src": "602:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1688,10 +1793,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 104,
+                    "id": 76,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "450:7:1",
+                    "src": "602:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1702,11 +1807,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 107,
+                  "id": 79,
                   "name": "rate",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "479:12:1",
+                  "scope": 115,
+                  "src": "631:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1714,10 +1819,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 106,
+                    "id": 78,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "479:7:1",
+                    "src": "631:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1728,11 +1833,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 109,
+                  "id": 81,
                   "name": "wallet",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "501:14:1",
+                  "scope": 115,
+                  "src": "653:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1740,10 +1845,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 108,
+                    "id": 80,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "501:7:1",
+                    "src": "653:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1754,11 +1859,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 111,
+                  "id": 83,
                   "name": "cap",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "525:11:1",
+                  "scope": 115,
+                  "src": "677:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1766,10 +1871,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 110,
+                    "id": 82,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "525:7:1",
+                    "src": "677:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1780,26 +1885,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 113,
+                  "id": 85,
                   "name": "token",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "546:19:1",
+                  "scope": 115,
+                  "src": "698:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ERC20Mintable_$1902",
+                    "typeIdentifier": "t_contract$_ERC20Mintable_$2227",
                     "typeString": "contract ERC20Mintable"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 112,
+                    "id": 84,
                     "name": "ERC20Mintable",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 1902,
-                    "src": "546:13:1",
+                    "referencedDeclaration": 2227,
+                    "src": "698:13:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC20Mintable_$1902",
+                      "typeIdentifier": "t_contract$_ERC20Mintable_$2227",
                       "typeString": "contract ERC20Mintable"
                     }
                   },
@@ -1808,11 +1913,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 115,
+                  "id": 87,
                   "name": "openingTimeTier4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "575:24:1",
+                  "scope": 115,
+                  "src": "727:24:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1820,10 +1925,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 114,
+                    "id": 86,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "575:7:1",
+                    "src": "727:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1834,37 +1939,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 117,
-                  "name": "rateTier3",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "609:17:1",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 116,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "609:7:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 119,
+                  "id": 89,
                   "name": "openingTimeTier3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "637:24:1",
+                  "scope": 115,
+                  "src": "762:24:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1872,10 +1951,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 118,
+                    "id": 88,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "637:7:1",
+                    "src": "762:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1886,37 +1965,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 121,
-                  "name": "rateTier2",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "672:17:1",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 120,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "672:7:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 123,
+                  "id": 91,
                   "name": "openingTimeTier2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "700:24:1",
+                  "scope": 115,
+                  "src": "797:24:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1924,36 +1977,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 122,
+                    "id": 90,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "700:7:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 125,
-                  "name": "rateTier1",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 150,
-                  "src": "735:17:1",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 124,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "735:7:1",
+                    "src": "797:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1963,27 +1990,208 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "411:347:1"
+              "src": "563:264:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 148,
+              "id": 113,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1008:0:1"
+              "src": "1067:0:1"
             },
-            "scope": 151,
-            "src": "400:610:1",
+            "scope": 130,
+            "src": "552:517:1",
             "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 128,
+              "nodeType": "Block",
+              "src": "1325:48:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 126,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 123,
+                          "name": "beneficiary",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 117,
+                          "src": "1349:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 122,
+                        "name": "getCap",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1150,
+                        "src": "1342:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_uint256_$",
+                          "typeString": "function (address) view returns (uint256)"
+                        }
+                      },
+                      "id": 124,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1342:19:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 125,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1365:1:1",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "1342:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 121,
+                  "id": 127,
+                  "nodeType": "Return",
+                  "src": "1335:31:1"
+                }
+              ]
+            },
+            "documentation": "@dev Checks whether the beneficiary is in the whitelist.\n@param beneficiary Address to be checked\n@return Whether the beneficiary is whitelisted",
+            "id": 129,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isWhitelisted",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 118,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 117,
+                  "name": "beneficiary",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129,
+                  "src": "1277:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 116,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1277:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1276:21:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 121,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 120,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129,
+                  "src": "1319:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 119,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1319:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1318:6:1"
+            },
+            "scope": 130,
+            "src": "1254:119:1",
+            "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 152,
-        "src": "278:734:1"
+        "scope": 131,
+        "src": "413:962:1"
       }
     ],
-    "src": "0:1012:1"
+    "src": "0:1375:1"
   },
   "compiler": {
     "name": "solc",
@@ -1991,5 +2199,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-09-29T16:32:21.039Z"
+  "updatedAt": "2018-09-30T12:59:12.886Z"
 }
