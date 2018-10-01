@@ -1,6 +1,5 @@
 pragma solidity ^0.4.24;
 
-import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 import "openzeppelin-solidity/contracts/crowdsale/Crowdsale.sol";
 
 
@@ -10,8 +9,6 @@ import "openzeppelin-solidity/contracts/crowdsale/Crowdsale.sol";
  * Combination of CappedCrowdsale and IndividuallyCappedCrowdsale
  */
 contract TieredPriceCrowdsale is Crowdsale {
-    using SafeMath for uint256;
-
     uint256 private _baseRate;
     uint256 private _tier2Start;
     uint256 private _tier3Start;
@@ -59,6 +56,26 @@ contract TieredPriceCrowdsale is Crowdsale {
       */
     function bonusRate() public view returns(uint256) {
         return _getbonusRate();
+    }
+
+     /**
+      * @param tier Value that represents the tier
+      * @return Timestamp when the tier starts
+      */
+    function tierStartTime(
+        uint256 tier       
+    ) external view returns(uint256) 
+    {
+        if(tier == 2){
+            return _tier2Start;
+        }
+        else if(tier == 3){
+            return _tier3Start;
+        }
+        else if(tier == 4){
+            return _tier4Start;
+        }
+        return 0;
     }
 
     /**
