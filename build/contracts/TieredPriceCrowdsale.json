@@ -193,7 +193,7 @@
         "id": 65,
         "nodeType": "ImportDirective",
         "scope": 233,
-        "sourceUnit": 997,
+        "sourceUnit": 990,
         "src": "26:65:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -207,10 +207,10 @@
               "id": 66,
               "name": "Crowdsale",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 996,
+              "referencedDeclaration": 989,
               "src": "320:9:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Crowdsale_$996",
+                "typeIdentifier": "t_contract$_Crowdsale_$989",
                 "typeString": "contract Crowdsale"
               }
             },
@@ -220,7 +220,7 @@
           }
         ],
         "contractDependencies": [
-          996
+          989
         ],
         "contractKind": "contract",
         "documentation": "@title CappedWhitelistedCrowdsale\n@dev Crowdsale with a limit for total contributions and per-beneficiary caps. \nCombination of CappedCrowdsale and IndividuallyCappedCrowdsale",
@@ -228,7 +228,7 @@
         "id": 232,
         "linearizedBaseContracts": [
           232,
-          996
+          989
         ],
         "name": "TieredPriceCrowdsale",
         "nodeType": "ContractDefinition",
@@ -409,10 +409,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2076,
-                        2077
+                        2069,
+                        2070
                       ],
-                      "referencedDeclaration": 2076,
+                      "referencedDeclaration": 2069,
                       "src": "634:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -475,7 +475,7 @@
                             "name": "block",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2063,
+                            "referencedDeclaration": 2056,
                             "src": "692:5:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_block",
@@ -514,10 +514,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2076,
-                        2077
+                        2069,
+                        2070
                       ],
-                      "referencedDeclaration": 2076,
+                      "referencedDeclaration": 2069,
                       "src": "665:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -603,10 +603,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2076,
-                        2077
+                        2069,
+                        2070
                       ],
-                      "referencedDeclaration": 2076,
+                      "referencedDeclaration": 2069,
                       "src": "718:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -692,10 +692,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2076,
-                        2077
+                        2069,
+                        2070
                       ],
-                      "referencedDeclaration": 2076,
+                      "referencedDeclaration": 2069,
                       "src": "773:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1079,7 +1079,7 @@
                         "name": "block",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2063,
+                        "referencedDeclaration": 2056,
                         "src": "1121:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_block",
@@ -1141,7 +1141,7 @@
                           "name": "block",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2063,
+                          "referencedDeclaration": 2056,
                           "src": "1218:5:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_block",
@@ -1203,7 +1203,7 @@
                             "name": "block",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2063,
+                            "referencedDeclaration": 2056,
                             "src": "1317:5:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_block",
@@ -2215,7 +2215,7 @@
                       "lValueRequested": false,
                       "memberName": "mul",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1294,
+                      "referencedDeclaration": 1287,
                       "src": "2416:13:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -2321,7 +2321,7 @@
             "scope": 232,
             "src": "2299:154:1",
             "stateMutability": "view",
-            "superFunction": 984,
+            "superFunction": 977,
             "visibility": "internal"
           }
         ],
@@ -2358,7 +2358,7 @@
         "id": 65,
         "nodeType": "ImportDirective",
         "scope": 233,
-        "sourceUnit": 997,
+        "sourceUnit": 990,
         "src": "26:65:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2372,10 +2372,10 @@
               "id": 66,
               "name": "Crowdsale",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 996,
+              "referencedDeclaration": 989,
               "src": "320:9:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Crowdsale_$996",
+                "typeIdentifier": "t_contract$_Crowdsale_$989",
                 "typeString": "contract Crowdsale"
               }
             },
@@ -2385,7 +2385,7 @@
           }
         ],
         "contractDependencies": [
-          996
+          989
         ],
         "contractKind": "contract",
         "documentation": "@title CappedWhitelistedCrowdsale\n@dev Crowdsale with a limit for total contributions and per-beneficiary caps. \nCombination of CappedCrowdsale and IndividuallyCappedCrowdsale",
@@ -2393,7 +2393,7 @@
         "id": 232,
         "linearizedBaseContracts": [
           232,
-          996
+          989
         ],
         "name": "TieredPriceCrowdsale",
         "nodeType": "ContractDefinition",
@@ -2574,10 +2574,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2076,
-                        2077
+                        2069,
+                        2070
                       ],
-                      "referencedDeclaration": 2076,
+                      "referencedDeclaration": 2069,
                       "src": "634:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2640,7 +2640,7 @@
                             "name": "block",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2063,
+                            "referencedDeclaration": 2056,
                             "src": "692:5:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_block",
@@ -2679,10 +2679,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2076,
-                        2077
+                        2069,
+                        2070
                       ],
-                      "referencedDeclaration": 2076,
+                      "referencedDeclaration": 2069,
                       "src": "665:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2768,10 +2768,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2076,
-                        2077
+                        2069,
+                        2070
                       ],
-                      "referencedDeclaration": 2076,
+                      "referencedDeclaration": 2069,
                       "src": "718:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2857,10 +2857,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2076,
-                        2077
+                        2069,
+                        2070
                       ],
-                      "referencedDeclaration": 2076,
+                      "referencedDeclaration": 2069,
                       "src": "773:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3244,7 +3244,7 @@
                         "name": "block",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2063,
+                        "referencedDeclaration": 2056,
                         "src": "1121:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_block",
@@ -3306,7 +3306,7 @@
                           "name": "block",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2063,
+                          "referencedDeclaration": 2056,
                           "src": "1218:5:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_block",
@@ -3368,7 +3368,7 @@
                             "name": "block",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2063,
+                            "referencedDeclaration": 2056,
                             "src": "1317:5:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_block",
@@ -4380,7 +4380,7 @@
                       "lValueRequested": false,
                       "memberName": "mul",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1294,
+                      "referencedDeclaration": 1287,
                       "src": "2416:13:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -4486,7 +4486,7 @@
             "scope": 232,
             "src": "2299:154:1",
             "stateMutability": "view",
-            "superFunction": 984,
+            "superFunction": 977,
             "visibility": "internal"
           }
         ],
@@ -4502,5 +4502,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-10-01T04:34:03.540Z"
+  "updatedAt": "2018-10-03T06:18:44.192Z"
 }

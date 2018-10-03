@@ -84,14 +84,14 @@
     "absolutePath": "openzeppelin-solidity/contracts/access/roles/MinterRole.sol",
     "exportedSymbols": {
       "MinterRole": [
-        736
+        729
       ]
     },
-    "id": 737,
+    "id": 730,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 641,
+        "id": 634,
         "literals": [
           "solidity",
           "^",
@@ -104,10 +104,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/access/Roles.sol",
         "file": "../Roles.sol",
-        "id": 642,
+        "id": 635,
         "nodeType": "ImportDirective",
-        "scope": 737,
-        "sourceUnit": 543,
+        "scope": 730,
+        "sourceUnit": 536,
         "src": "26:22:5",
         "symbolAliases": [],
         "unitAlias": ""
@@ -118,24 +118,24 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 736,
+        "id": 729,
         "linearizedBaseContracts": [
-          736
+          729
         ],
         "name": "MinterRole",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 645,
+            "id": 638,
             "libraryName": {
               "contractScope": null,
-              "id": 643,
+              "id": 636,
               "name": "Roles",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 542,
+              "referencedDeclaration": 535,
               "src": "81:5:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Roles_$542",
+                "typeIdentifier": "t_contract$_Roles_$535",
                 "typeString": "library Roles"
               }
             },
@@ -143,13 +143,13 @@
             "src": "75:27:5",
             "typeName": {
               "contractScope": null,
-              "id": 644,
+              "id": 637,
               "name": "Roles.Role",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 470,
+              "referencedDeclaration": 463,
               "src": "91:10:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Role_$470_storage_ptr",
+                "typeIdentifier": "t_struct$_Role_$463_storage_ptr",
                 "typeString": "struct Roles.Role"
               }
             }
@@ -157,20 +157,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 649,
+            "id": 642,
             "name": "MinterAdded",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 648,
+              "id": 641,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 647,
+                  "id": 640,
                   "indexed": true,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 649,
+                  "scope": 642,
                   "src": "124:23:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -179,7 +179,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 646,
+                    "id": 639,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "124:7:5",
@@ -199,20 +199,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 653,
+            "id": 646,
             "name": "MinterRemoved",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 652,
+              "id": 645,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 651,
+                  "id": 644,
                   "indexed": true,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 653,
+                  "scope": 646,
                   "src": "172:23:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -221,7 +221,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 650,
+                    "id": 643,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "172:7:5",
@@ -240,26 +240,26 @@
           },
           {
             "constant": false,
-            "id": 655,
+            "id": 648,
             "name": "minters",
             "nodeType": "VariableDeclaration",
-            "scope": 736,
+            "scope": 729,
             "src": "201:26:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Role_$470_storage",
+              "typeIdentifier": "t_struct$_Role_$463_storage",
               "typeString": "struct Roles.Role"
             },
             "typeName": {
               "contractScope": null,
-              "id": 654,
+              "id": 647,
               "name": "Roles.Role",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 470,
+              "referencedDeclaration": 463,
               "src": "201:10:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Role_$470_storage_ptr",
+                "typeIdentifier": "t_struct$_Role_$463_storage_ptr",
                 "typeString": "struct Roles.Role"
               }
             },
@@ -268,7 +268,7 @@
           },
           {
             "body": {
-              "id": 665,
+              "id": 658,
               "nodeType": "Block",
               "src": "253:34:5",
               "statements": [
@@ -280,18 +280,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 661,
+                          "id": 654,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2073,
+                          "referencedDeclaration": 2066,
                           "src": "271:3:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 662,
+                        "id": 655,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -315,32 +315,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 658,
+                        "id": 651,
                         "name": "minters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 655,
+                        "referencedDeclaration": 648,
                         "src": "259:7:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$470_storage",
+                          "typeIdentifier": "t_struct$_Role_$463_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 660,
+                      "id": 653,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "add",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 494,
+                      "referencedDeclaration": 487,
                       "src": "259:11:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$470_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$470_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$463_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$463_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address)"
                       }
                     },
-                    "id": 663,
+                    "id": 656,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -354,14 +354,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 664,
+                  "id": 657,
                   "nodeType": "ExpressionStatement",
                   "src": "259:23:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 666,
+            "id": 659,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -369,19 +369,19 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 656,
+              "id": 649,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "243:2:5"
             },
             "payable": false,
             "returnParameters": {
-              "id": 657,
+              "id": 650,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "253:0:5"
             },
-            "scope": 736,
+            "scope": 729,
             "src": "232:55:5",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -389,7 +389,7 @@
           },
           {
             "body": {
-              "id": 676,
+              "id": 669,
               "nodeType": "Block",
               "src": "313:47:5",
               "statements": [
@@ -404,18 +404,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 670,
+                              "id": 663,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2073,
+                              "referencedDeclaration": 2066,
                               "src": "336:3:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 671,
+                            "id": 664,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -437,18 +437,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 669,
+                          "id": 662,
                           "name": "isMinter",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 690,
+                          "referencedDeclaration": 683,
                           "src": "327:8:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                             "typeString": "function (address) view returns (bool)"
                           }
                         },
-                        "id": 672,
+                        "id": 665,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -470,21 +470,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 668,
+                      "id": 661,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2076,
-                        2077
+                        2069,
+                        2070
                       ],
-                      "referencedDeclaration": 2076,
+                      "referencedDeclaration": 2069,
                       "src": "319:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 673,
+                    "id": 666,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -498,23 +498,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 674,
+                  "id": 667,
                   "nodeType": "ExpressionStatement",
                   "src": "319:29:5"
                 },
                 {
-                  "id": 675,
+                  "id": 668,
                   "nodeType": "PlaceholderStatement",
                   "src": "354:1:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 677,
+            "id": 670,
             "name": "onlyMinter",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 667,
+              "id": 660,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "310:2:5"
@@ -524,7 +524,7 @@
           },
           {
             "body": {
-              "id": 689,
+              "id": 682,
               "nodeType": "Block",
               "src": "426:38:5",
               "statements": [
@@ -534,11 +534,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 686,
+                        "id": 679,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 679,
+                        "referencedDeclaration": 672,
                         "src": "451:7:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -555,32 +555,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 684,
+                        "id": 677,
                         "name": "minters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 655,
+                        "referencedDeclaration": 648,
                         "src": "439:7:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$470_storage",
+                          "typeIdentifier": "t_struct$_Role_$463_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 685,
+                      "id": 678,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "has",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 541,
+                      "referencedDeclaration": 534,
                       "src": "439:11:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$470_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$470_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$463_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$463_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address) view returns (bool)"
                       }
                     },
-                    "id": 687,
+                    "id": 680,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -594,15 +594,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 683,
-                  "id": 688,
+                  "functionReturnParameters": 676,
+                  "id": 681,
                   "nodeType": "Return",
                   "src": "432:27:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 690,
+            "id": 683,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -610,15 +610,15 @@
             "name": "isMinter",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 680,
+              "id": 673,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 679,
+                  "id": 672,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 690,
+                  "scope": 683,
                   "src": "382:15:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -627,7 +627,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 678,
+                    "id": 671,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "382:7:5",
@@ -644,15 +644,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 683,
+              "id": 676,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 682,
+                  "id": 675,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 690,
+                  "scope": 683,
                   "src": "420:4:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -661,7 +661,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 681,
+                    "id": 674,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "420:4:5",
@@ -676,7 +676,7 @@
               ],
               "src": "419:6:5"
             },
-            "scope": 736,
+            "scope": 729,
             "src": "364:100:5",
             "stateMutability": "view",
             "superFunction": null,
@@ -684,7 +684,7 @@
           },
           {
             "body": {
-              "id": 707,
+              "id": 700,
               "nodeType": "Block",
               "src": "522:62:5",
               "statements": [
@@ -694,11 +694,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 700,
+                        "id": 693,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 692,
+                        "referencedDeclaration": 685,
                         "src": "540:7:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -715,32 +715,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 697,
+                        "id": 690,
                         "name": "minters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 655,
+                        "referencedDeclaration": 648,
                         "src": "528:7:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$470_storage",
+                          "typeIdentifier": "t_struct$_Role_$463_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 699,
+                      "id": 692,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "add",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 494,
+                      "referencedDeclaration": 487,
                       "src": "528:11:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$470_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$470_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$463_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$463_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address)"
                       }
                     },
-                    "id": 701,
+                    "id": 694,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -754,7 +754,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 702,
+                  "id": 695,
                   "nodeType": "ExpressionStatement",
                   "src": "528:20:5"
                 },
@@ -764,11 +764,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 704,
+                        "id": 697,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 692,
+                        "referencedDeclaration": 685,
                         "src": "571:7:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -783,18 +783,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 703,
+                      "id": 696,
                       "name": "MinterAdded",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 649,
+                      "referencedDeclaration": 642,
                       "src": "559:11:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 705,
+                    "id": 698,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -808,28 +808,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 706,
+                  "id": 699,
                   "nodeType": "EmitStatement",
                   "src": "554:25:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 708,
+            "id": 701,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 695,
+                "id": 688,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 694,
+                  "id": 687,
                   "name": "onlyMinter",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 677,
+                  "referencedDeclaration": 670,
                   "src": "511:10:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -843,15 +843,15 @@
             "name": "addMinter",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 693,
+              "id": 686,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 692,
+                  "id": 685,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 708,
+                  "scope": 701,
                   "src": "487:15:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -860,7 +860,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 691,
+                    "id": 684,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "487:7:5",
@@ -877,12 +877,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 696,
+              "id": 689,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "522:0:5"
             },
-            "scope": 736,
+            "scope": 729,
             "src": "468:116:5",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -890,7 +890,7 @@
           },
           {
             "body": {
-              "id": 718,
+              "id": 711,
               "nodeType": "Block",
               "src": "621:37:5",
               "statements": [
@@ -902,18 +902,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 714,
+                          "id": 707,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2073,
+                          "referencedDeclaration": 2066,
                           "src": "642:3:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 715,
+                        "id": 708,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -937,32 +937,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 711,
+                        "id": 704,
                         "name": "minters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 655,
+                        "referencedDeclaration": 648,
                         "src": "627:7:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$470_storage",
+                          "typeIdentifier": "t_struct$_Role_$463_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 713,
+                      "id": 706,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "remove",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 518,
+                      "referencedDeclaration": 511,
                       "src": "627:14:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$470_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$470_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$463_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$463_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address)"
                       }
                     },
-                    "id": 716,
+                    "id": 709,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -976,14 +976,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 717,
+                  "id": 710,
                   "nodeType": "ExpressionStatement",
                   "src": "627:26:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 719,
+            "id": 712,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -991,19 +991,19 @@
             "name": "renounceMinter",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 709,
+              "id": 702,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "611:2:5"
             },
             "payable": false,
             "returnParameters": {
-              "id": 710,
+              "id": 703,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "621:0:5"
             },
-            "scope": 736,
+            "scope": 729,
             "src": "588:70:5",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1011,7 +1011,7 @@
           },
           {
             "body": {
-              "id": 734,
+              "id": 727,
               "nodeType": "Block",
               "src": "711:67:5",
               "statements": [
@@ -1021,11 +1021,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 727,
+                        "id": 720,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 721,
+                        "referencedDeclaration": 714,
                         "src": "732:7:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1042,32 +1042,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 724,
+                        "id": 717,
                         "name": "minters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 655,
+                        "referencedDeclaration": 648,
                         "src": "717:7:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$470_storage",
+                          "typeIdentifier": "t_struct$_Role_$463_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 726,
+                      "id": 719,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "remove",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 518,
+                      "referencedDeclaration": 511,
                       "src": "717:14:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$470_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$470_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$463_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$463_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address)"
                       }
                     },
-                    "id": 728,
+                    "id": 721,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1081,7 +1081,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 729,
+                  "id": 722,
                   "nodeType": "ExpressionStatement",
                   "src": "717:23:5"
                 },
@@ -1091,11 +1091,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 731,
+                        "id": 724,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 721,
+                        "referencedDeclaration": 714,
                         "src": "765:7:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1110,18 +1110,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 730,
+                      "id": 723,
                       "name": "MinterRemoved",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 653,
+                      "referencedDeclaration": 646,
                       "src": "751:13:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 732,
+                    "id": 725,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1135,14 +1135,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 733,
+                  "id": 726,
                   "nodeType": "EmitStatement",
                   "src": "746:27:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 735,
+            "id": 728,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1150,15 +1150,15 @@
             "name": "_removeMinter",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 722,
+              "id": 715,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 721,
+                  "id": 714,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 735,
+                  "scope": 728,
                   "src": "685:15:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1167,7 +1167,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 720,
+                    "id": 713,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "685:7:5",
@@ -1184,19 +1184,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 723,
+              "id": 716,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "711:0:5"
             },
-            "scope": 736,
+            "scope": 729,
             "src": "662:116:5",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 737,
+        "scope": 730,
         "src": "51:729:5"
       }
     ],
@@ -1206,14 +1206,14 @@
     "absolutePath": "openzeppelin-solidity/contracts/access/roles/MinterRole.sol",
     "exportedSymbols": {
       "MinterRole": [
-        736
+        729
       ]
     },
-    "id": 737,
+    "id": 730,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 641,
+        "id": 634,
         "literals": [
           "solidity",
           "^",
@@ -1226,10 +1226,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/access/Roles.sol",
         "file": "../Roles.sol",
-        "id": 642,
+        "id": 635,
         "nodeType": "ImportDirective",
-        "scope": 737,
-        "sourceUnit": 543,
+        "scope": 730,
+        "sourceUnit": 536,
         "src": "26:22:5",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1240,24 +1240,24 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 736,
+        "id": 729,
         "linearizedBaseContracts": [
-          736
+          729
         ],
         "name": "MinterRole",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 645,
+            "id": 638,
             "libraryName": {
               "contractScope": null,
-              "id": 643,
+              "id": 636,
               "name": "Roles",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 542,
+              "referencedDeclaration": 535,
               "src": "81:5:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Roles_$542",
+                "typeIdentifier": "t_contract$_Roles_$535",
                 "typeString": "library Roles"
               }
             },
@@ -1265,13 +1265,13 @@
             "src": "75:27:5",
             "typeName": {
               "contractScope": null,
-              "id": 644,
+              "id": 637,
               "name": "Roles.Role",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 470,
+              "referencedDeclaration": 463,
               "src": "91:10:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Role_$470_storage_ptr",
+                "typeIdentifier": "t_struct$_Role_$463_storage_ptr",
                 "typeString": "struct Roles.Role"
               }
             }
@@ -1279,20 +1279,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 649,
+            "id": 642,
             "name": "MinterAdded",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 648,
+              "id": 641,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 647,
+                  "id": 640,
                   "indexed": true,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 649,
+                  "scope": 642,
                   "src": "124:23:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1301,7 +1301,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 646,
+                    "id": 639,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "124:7:5",
@@ -1321,20 +1321,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 653,
+            "id": 646,
             "name": "MinterRemoved",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 652,
+              "id": 645,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 651,
+                  "id": 644,
                   "indexed": true,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 653,
+                  "scope": 646,
                   "src": "172:23:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1343,7 +1343,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 650,
+                    "id": 643,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "172:7:5",
@@ -1362,26 +1362,26 @@
           },
           {
             "constant": false,
-            "id": 655,
+            "id": 648,
             "name": "minters",
             "nodeType": "VariableDeclaration",
-            "scope": 736,
+            "scope": 729,
             "src": "201:26:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Role_$470_storage",
+              "typeIdentifier": "t_struct$_Role_$463_storage",
               "typeString": "struct Roles.Role"
             },
             "typeName": {
               "contractScope": null,
-              "id": 654,
+              "id": 647,
               "name": "Roles.Role",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 470,
+              "referencedDeclaration": 463,
               "src": "201:10:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Role_$470_storage_ptr",
+                "typeIdentifier": "t_struct$_Role_$463_storage_ptr",
                 "typeString": "struct Roles.Role"
               }
             },
@@ -1390,7 +1390,7 @@
           },
           {
             "body": {
-              "id": 665,
+              "id": 658,
               "nodeType": "Block",
               "src": "253:34:5",
               "statements": [
@@ -1402,18 +1402,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 661,
+                          "id": 654,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2073,
+                          "referencedDeclaration": 2066,
                           "src": "271:3:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 662,
+                        "id": 655,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1437,32 +1437,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 658,
+                        "id": 651,
                         "name": "minters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 655,
+                        "referencedDeclaration": 648,
                         "src": "259:7:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$470_storage",
+                          "typeIdentifier": "t_struct$_Role_$463_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 660,
+                      "id": 653,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "add",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 494,
+                      "referencedDeclaration": 487,
                       "src": "259:11:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$470_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$470_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$463_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$463_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address)"
                       }
                     },
-                    "id": 663,
+                    "id": 656,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1476,14 +1476,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 664,
+                  "id": 657,
                   "nodeType": "ExpressionStatement",
                   "src": "259:23:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 666,
+            "id": 659,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -1491,19 +1491,19 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 656,
+              "id": 649,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "243:2:5"
             },
             "payable": false,
             "returnParameters": {
-              "id": 657,
+              "id": 650,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "253:0:5"
             },
-            "scope": 736,
+            "scope": 729,
             "src": "232:55:5",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1511,7 +1511,7 @@
           },
           {
             "body": {
-              "id": 676,
+              "id": 669,
               "nodeType": "Block",
               "src": "313:47:5",
               "statements": [
@@ -1526,18 +1526,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 670,
+                              "id": 663,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2073,
+                              "referencedDeclaration": 2066,
                               "src": "336:3:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 671,
+                            "id": 664,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1559,18 +1559,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 669,
+                          "id": 662,
                           "name": "isMinter",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 690,
+                          "referencedDeclaration": 683,
                           "src": "327:8:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                             "typeString": "function (address) view returns (bool)"
                           }
                         },
-                        "id": 672,
+                        "id": 665,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1592,21 +1592,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 668,
+                      "id": 661,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2076,
-                        2077
+                        2069,
+                        2070
                       ],
-                      "referencedDeclaration": 2076,
+                      "referencedDeclaration": 2069,
                       "src": "319:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 673,
+                    "id": 666,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1620,23 +1620,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 674,
+                  "id": 667,
                   "nodeType": "ExpressionStatement",
                   "src": "319:29:5"
                 },
                 {
-                  "id": 675,
+                  "id": 668,
                   "nodeType": "PlaceholderStatement",
                   "src": "354:1:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 677,
+            "id": 670,
             "name": "onlyMinter",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 667,
+              "id": 660,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "310:2:5"
@@ -1646,7 +1646,7 @@
           },
           {
             "body": {
-              "id": 689,
+              "id": 682,
               "nodeType": "Block",
               "src": "426:38:5",
               "statements": [
@@ -1656,11 +1656,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 686,
+                        "id": 679,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 679,
+                        "referencedDeclaration": 672,
                         "src": "451:7:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1677,32 +1677,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 684,
+                        "id": 677,
                         "name": "minters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 655,
+                        "referencedDeclaration": 648,
                         "src": "439:7:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$470_storage",
+                          "typeIdentifier": "t_struct$_Role_$463_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 685,
+                      "id": 678,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "has",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 541,
+                      "referencedDeclaration": 534,
                       "src": "439:11:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$470_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$470_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$463_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$463_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address) view returns (bool)"
                       }
                     },
-                    "id": 687,
+                    "id": 680,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1716,15 +1716,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 683,
-                  "id": 688,
+                  "functionReturnParameters": 676,
+                  "id": 681,
                   "nodeType": "Return",
                   "src": "432:27:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 690,
+            "id": 683,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1732,15 +1732,15 @@
             "name": "isMinter",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 680,
+              "id": 673,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 679,
+                  "id": 672,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 690,
+                  "scope": 683,
                   "src": "382:15:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1749,7 +1749,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 678,
+                    "id": 671,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "382:7:5",
@@ -1766,15 +1766,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 683,
+              "id": 676,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 682,
+                  "id": 675,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 690,
+                  "scope": 683,
                   "src": "420:4:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1783,7 +1783,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 681,
+                    "id": 674,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "420:4:5",
@@ -1798,7 +1798,7 @@
               ],
               "src": "419:6:5"
             },
-            "scope": 736,
+            "scope": 729,
             "src": "364:100:5",
             "stateMutability": "view",
             "superFunction": null,
@@ -1806,7 +1806,7 @@
           },
           {
             "body": {
-              "id": 707,
+              "id": 700,
               "nodeType": "Block",
               "src": "522:62:5",
               "statements": [
@@ -1816,11 +1816,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 700,
+                        "id": 693,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 692,
+                        "referencedDeclaration": 685,
                         "src": "540:7:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1837,32 +1837,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 697,
+                        "id": 690,
                         "name": "minters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 655,
+                        "referencedDeclaration": 648,
                         "src": "528:7:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$470_storage",
+                          "typeIdentifier": "t_struct$_Role_$463_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 699,
+                      "id": 692,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "add",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 494,
+                      "referencedDeclaration": 487,
                       "src": "528:11:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$470_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$470_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$463_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$463_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address)"
                       }
                     },
-                    "id": 701,
+                    "id": 694,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1876,7 +1876,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 702,
+                  "id": 695,
                   "nodeType": "ExpressionStatement",
                   "src": "528:20:5"
                 },
@@ -1886,11 +1886,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 704,
+                        "id": 697,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 692,
+                        "referencedDeclaration": 685,
                         "src": "571:7:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1905,18 +1905,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 703,
+                      "id": 696,
                       "name": "MinterAdded",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 649,
+                      "referencedDeclaration": 642,
                       "src": "559:11:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 705,
+                    "id": 698,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1930,28 +1930,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 706,
+                  "id": 699,
                   "nodeType": "EmitStatement",
                   "src": "554:25:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 708,
+            "id": 701,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 695,
+                "id": 688,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 694,
+                  "id": 687,
                   "name": "onlyMinter",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 677,
+                  "referencedDeclaration": 670,
                   "src": "511:10:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1965,15 +1965,15 @@
             "name": "addMinter",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 693,
+              "id": 686,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 692,
+                  "id": 685,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 708,
+                  "scope": 701,
                   "src": "487:15:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1982,7 +1982,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 691,
+                    "id": 684,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "487:7:5",
@@ -1999,12 +1999,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 696,
+              "id": 689,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "522:0:5"
             },
-            "scope": 736,
+            "scope": 729,
             "src": "468:116:5",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2012,7 +2012,7 @@
           },
           {
             "body": {
-              "id": 718,
+              "id": 711,
               "nodeType": "Block",
               "src": "621:37:5",
               "statements": [
@@ -2024,18 +2024,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 714,
+                          "id": 707,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2073,
+                          "referencedDeclaration": 2066,
                           "src": "642:3:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 715,
+                        "id": 708,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2059,32 +2059,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 711,
+                        "id": 704,
                         "name": "minters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 655,
+                        "referencedDeclaration": 648,
                         "src": "627:7:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$470_storage",
+                          "typeIdentifier": "t_struct$_Role_$463_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 713,
+                      "id": 706,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "remove",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 518,
+                      "referencedDeclaration": 511,
                       "src": "627:14:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$470_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$470_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$463_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$463_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address)"
                       }
                     },
-                    "id": 716,
+                    "id": 709,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2098,14 +2098,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 717,
+                  "id": 710,
                   "nodeType": "ExpressionStatement",
                   "src": "627:26:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 719,
+            "id": 712,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2113,19 +2113,19 @@
             "name": "renounceMinter",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 709,
+              "id": 702,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "611:2:5"
             },
             "payable": false,
             "returnParameters": {
-              "id": 710,
+              "id": 703,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "621:0:5"
             },
-            "scope": 736,
+            "scope": 729,
             "src": "588:70:5",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2133,7 +2133,7 @@
           },
           {
             "body": {
-              "id": 734,
+              "id": 727,
               "nodeType": "Block",
               "src": "711:67:5",
               "statements": [
@@ -2143,11 +2143,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 727,
+                        "id": 720,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 721,
+                        "referencedDeclaration": 714,
                         "src": "732:7:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2164,32 +2164,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 724,
+                        "id": 717,
                         "name": "minters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 655,
+                        "referencedDeclaration": 648,
                         "src": "717:7:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Role_$470_storage",
+                          "typeIdentifier": "t_struct$_Role_$463_storage",
                           "typeString": "struct Roles.Role storage ref"
                         }
                       },
-                      "id": 726,
+                      "id": 719,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "remove",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 518,
+                      "referencedDeclaration": 511,
                       "src": "717:14:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$470_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$470_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$463_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$463_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address)"
                       }
                     },
-                    "id": 728,
+                    "id": 721,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2203,7 +2203,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 729,
+                  "id": 722,
                   "nodeType": "ExpressionStatement",
                   "src": "717:23:5"
                 },
@@ -2213,11 +2213,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 731,
+                        "id": 724,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 721,
+                        "referencedDeclaration": 714,
                         "src": "765:7:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2232,18 +2232,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 730,
+                      "id": 723,
                       "name": "MinterRemoved",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 653,
+                      "referencedDeclaration": 646,
                       "src": "751:13:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 732,
+                    "id": 725,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2257,14 +2257,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 733,
+                  "id": 726,
                   "nodeType": "EmitStatement",
                   "src": "746:27:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 735,
+            "id": 728,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2272,15 +2272,15 @@
             "name": "_removeMinter",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 722,
+              "id": 715,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 721,
+                  "id": 714,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 735,
+                  "scope": 728,
                   "src": "685:15:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2289,7 +2289,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 720,
+                    "id": 713,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "685:7:5",
@@ -2306,19 +2306,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 723,
+              "id": 716,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "711:0:5"
             },
-            "scope": 736,
+            "scope": 729,
             "src": "662:116:5",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 737,
+        "scope": 730,
         "src": "51:729:5"
       }
     ],
@@ -2330,5 +2330,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-10-01T04:34:03.545Z"
+  "updatedAt": "2018-10-03T06:18:44.193Z"
 }

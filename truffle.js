@@ -25,6 +25,7 @@ module.exports = {
     ropsten: { 
       provider: ropstenProvider, 
       network_id: "3", 
+      gasPrice: 10e9, // 10 gwei
       gas: 4465030 
     },
     kovan: { 
@@ -36,7 +37,7 @@ module.exports = {
     live: { 
       provider: mainNetProvider, 
       network_id: "1", 
-      gasPrice: 15e9, // 15 gwei
+      gasPrice: 8e9, // 8 gwei
       gas: 7500000 
     }
   }

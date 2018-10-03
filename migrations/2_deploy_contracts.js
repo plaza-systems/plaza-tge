@@ -19,21 +19,21 @@ module.exports = function(deployer) {
     parseInt(token.cap, 10)
   ];
  */
-  const startTime = 1538384400;
+  const startTime = 1538643600;
   const oneDay = 86400;
   // const oneHour = 3600;
  
   const crowdsale = {
     "openingTime": startTime,
-    "closingTime": 1542013200,
+    "closingTime": utils.toFixed(startTime + (oneDay * 42)),
     "rate": 5000,
     "wallet": "0xdadec2326bd7820de2d3b505b373d0ad0a1206ad",
     "cap": utils.toFixed(500000000 * 10**tokenDecimals),
-    "token": "0x51aa10bdc19780d440261f67158016188a7207e2",
+    "token": "0x51AA10BdC19780d440261f67158016188a7207e2",
     "openingTimeTier4": utils.toFixed(startTime + (oneDay * 14)),
     "openingTimeTier3": utils.toFixed(startTime + (oneDay * 7)),
     "openingTimeTier2": utils.toFixed(startTime + oneDay),
-    "invCap": utils.toFixed(2500 * 10**tokenDecimals)
+    "invCap": utils.toFixed(10000 * 10**tokenDecimals)
   };
 
   const crowdsaleParams = [
